@@ -1,6 +1,40 @@
-<ion-content [fullscreen]="true">
+<ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Studio Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">This is the menu content.</ion-content>
+</ion-menu>
 
-    
-    
+<div class="ion-page" id="main-content">
+    <ion-header [translucent]="true" mode="md">
+        <ion-toolbar>
+            <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+            </ion-buttons>
 
-</ion-content>
+            <ion-title slot="start">Studio M&K</ion-title>
+
+            <ion-buttons slot="end" [collapse]="true">
+                <ion-button slot="end" fill="outline" routerLink="/login" size="small">LOGIN</ion-button>
+                <ion-button slot="end" fill="solid" routerLink="/cadastrar" size="small">CADASTRO</ion-button>
+            </ion-buttons>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content [fullscreen]="true">
+            
+    </ion-content>
+
+    <ion-footer [translucent]="true">
+        <ion-toolbar>
+            <ion-buttons slot="end" class="contato">
+                <ion-icon name="logo-instagram" routerLink="https://www.instagram.com/s_tudiomk/" size="large" ></ion-icon>
+                <ion-icon name="logo-facebook" size="large"></ion-icon>
+                <ion-icon name="logo-whatsapp" size="large"></ion-icon>
+            </ion-buttons>
+        </ion-toolbar>
+    </ion-footer>
+</div>
+
