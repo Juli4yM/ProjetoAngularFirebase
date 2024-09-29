@@ -14,4 +14,12 @@ export class HomePage {
 
   constructor( ){ }
 
+  redirecionarParaInstagram() {
+    window.location.href = 'https://www.instagram.com/s_tudiomk/';
+  }
+
+  redirecionarParaWhats() {
+    window.location.href = 'https://wa.me/+5515997008641/?text=Ola';
+  }
+
 }

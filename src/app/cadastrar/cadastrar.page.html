@@ -1,13 +1,39 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Cadastrar</ion-title>
+    <ion-buttons slot="start" [collapse]="true">
+      <ion-button routerLink="/home" size="large"><ion-icon name="arrow-back" size="large"></ion-icon></ion-button>
+    </ion-buttons>
+
+      <ion-title>Studio M&K</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">cadastrar</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  
+  <ion-row class="ion-justify-content-center ion-align-items-center" style="height: 100%;">
+    <ion-col     console.log(dados.email);
+    class="log">
+      <form #criarContaForm="ngForm" (ngSubmit)="criarConta(criarContaForm.value)">
+        <ion-item>
+          <h2>Cadastre-se</h2>
+        </ion-item>
+        <ion-item>
+          <ion-input label="Nome" type="text" name="nome" ngModel required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input label="Email" type="text" placeholder="exemplo@hotmail.com" name="email" ngModel required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input label="Telefone" type="number" name="telefone" placeholder="+5515123456789" ngModel required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input label="Senha" type="password" name="password" ngModel required></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-button type="submit" size="default" fill="solid" slot="end" color="light" type="submit">Cadastrar</ion-button>
+        </ion-item>
+      </form>
+    </ion-col>
+  </ion-row>
+
 </ion-content>

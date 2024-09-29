@@ -1,4 +1,19 @@
 .contato{
-    margin-right: 1.5%;
+    margin-right: 3%;
     column-gap: 8%;
 }
+
+.desktop-only {
+    display: block; /* Exibe por padrão */
+  }
+  
+  @media (max-width: 767px) {
+    .desktop-only {
+      display: none; /* Esconde em dispositivos móveis */
+    }
+
+    .contato{
+        margin-right: 5%;
+        column-gap: 8%;
+    }    
+  }

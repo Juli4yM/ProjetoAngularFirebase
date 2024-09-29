@@ -1,24 +1,24 @@
 <ion-menu contentId="main-content">
     <ion-header>
       <ion-toolbar>
-        <ion-title>Studio Menu</ion-title>
+        <ion-title>Studio M&K</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">This is the menu content.</ion-content>
 </ion-menu>
 
 <div class="ion-page" id="main-content">
-    <ion-header [translucent]="true" mode="md">
+    <ion-header [translucent]="true">
         <ion-toolbar>
             <ion-buttons slot="start">
             <ion-menu-button></ion-menu-button>
             </ion-buttons>
 
-            <ion-title slot="start">Studio M&K</ion-title>
+            <ion-title slot="start" style="font-weight: normal;">Studio M&K</ion-title>
 
             <ion-buttons slot="end" [collapse]="true">
                 <ion-button slot="end" fill="outline" routerLink="/login" size="small">LOGIN</ion-button>
-                <ion-button slot="end" fill="solid" routerLink="/cadastrar" size="small">CADASTRO</ion-button>
+                <ion-button slot="end" class="desktop-only" fill="solid" routerLink="/cadastrar" size="small">CADASTRAR</ion-button>
             </ion-buttons>
         </ion-toolbar>
     </ion-header>
@@ -30,9 +30,9 @@
     <ion-footer [translucent]="true">
         <ion-toolbar>
             <ion-buttons slot="end" class="contato">
-                <ion-icon name="logo-instagram" routerLink="https://www.instagram.com/s_tudiomk/" size="large" ></ion-icon>
-                <ion-icon name="logo-facebook" size="large"></ion-icon>
-                <ion-icon name="logo-whatsapp" size="large"></ion-icon>
+                <ion-button (click)="redirecionarParaInstagram()" size="large"><ion-icon name="logo-instagram" size="default"></ion-icon></ion-button>
+                <ion-button routerLink="" size="large"><ion-icon name="logo-facebook" size="default"></ion-icon></ion-button>
+                <ion-button (click)="redirecionarParaWhats()" size="large"><ion-icon name="logo-whatsapp" size="default"></ion-icon></ion-button>
             </ion-buttons>
         </ion-toolbar>
     </ion-footer>

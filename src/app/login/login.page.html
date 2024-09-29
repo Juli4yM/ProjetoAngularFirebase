@@ -1,13 +1,34 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-buttons slot="start" [collapse]="true">
+      <ion-button routerLink="/home" size="large"><ion-icon name="arrow-back" size="large"></ion-icon></ion-button>
+    </ion-buttons>
+
+      <ion-title>Login</ion-title>
+
+      <ion-button slot="end" fill="solid" routerLink="/cadastrar" size="small">CADASTRAR</ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">login</ion-title>
-    </ion-toolbar>
-  </ion-header>
+
+    <ion-row class="ion-justify-content-center ion-align-items-center" style="height: 100%;">
+      <ion-col size="12" sizeLg="6" class="log">
+        <form #loginForm="ngForm" (ngSubmit)="logarConta(loginForm.value)">
+          <ion-item>
+            <h2>Logar</h2>
+          </ion-item>
+          <ion-item>
+            <ion-input label="Email" type="text" placeholder="exemplo@hotmail.com" name="email" ngModel required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input label="Senha" type="password" name="password" ngModel required></ion-input>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-button type="submit" size="default" fill="solid" slot="end">Entrar</ion-button>
+          </ion-item>
+        </form>
+      </ion-col>
+    </ion-row>
+
 </ion-content>
