@@ -1,3 +1,4 @@
+
 import { MessageService } from './message.service';
 import { Injectable } from '@angular/core';
 import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from '@angular/fire/auth';
@@ -29,7 +30,11 @@ export class AuthenticateService {
 
         createUserWithEmailAndPassword(this.auth, email, password)
         .then(() => {
-            this._message.show('Conta criada com sucesso! Realize o Login!!!');
+            this._message.show('Conta criada com sucesso! Realize o Login!');
+            this._router.navigate(['/login']).then(() => {
+                // Recarrega a página para garantir que os dados de login sejam carregados corretamente
+                window.location.reload();
+              });
         })
         .catch((_: any) => {
             this.showErro(_, email, password);
@@ -52,8 +57,13 @@ export class AuthenticateService {
 
         signInWithEmailAndPassword(this.auth, email, password)
         .then((response: any) => {
-            console.log(response.user);
+            localStorage.setItem('user', JSON.stringify(response.user));
+
             this._message.show('Login Realizado com Sucesso!');
+            this._router.navigate(['/home']).then(() => {
+                // Recarrega a página para garantir que os dados de login sejam carregados corretamente
+                window.location.reload();
+              });
         })
         .catch((_: any) => {
             this.showErro(_, email, password);
@@ -63,6 +73,17 @@ export class AuthenticateService {
         });
 
         return true;
+    }
+
+    getUserData() {
+        const user = localStorage.getItem('user');
+        return user ? JSON.parse(user) : null;
+    }
+
+    // Método para logout
+    logout() {
+        localStorage.removeItem('user');
+        this._router.navigate(['/login']);
     }
 
     

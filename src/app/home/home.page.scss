@@ -1,3 +1,5 @@
+
+
 .contato{
     margin-right: 3%;
     column-gap: 8%;
@@ -6,6 +8,51 @@
 .desktop-only {
     display: block; /* Exibe por padrão */
   }
+
+.centerMain{
+  background-color: var(--ion-color-light);
+  color: var(--ion-color-light-contrast);
+
+  & .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    & h1 {
+      font-size: 2.5rem;
+      font-weight: bolder;
+    }
+  }
+}
+
+.lowerr{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 1%;
+  flex-direction: column;
+}
+
+.centro{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.botao{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header2{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
   
   @media (max-width: 767px) {
     .desktop-only {

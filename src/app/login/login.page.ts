@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticateService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -7,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private _auth: AuthenticateService
+  ) { }
 
-  logarConta(dados: any){
-    console.log(dados);
-    console.log(dados.email);
-    console.log(dados.password);
+  logarConta(dados: any) {
+    this._auth.login(dados.email, dados.password)
   }
 
   ngOnInit() {

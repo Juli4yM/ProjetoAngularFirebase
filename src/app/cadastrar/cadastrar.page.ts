@@ -1,4 +1,6 @@
+
 import { Component, OnInit } from '@angular/core';
+import { AuthenticateService } from '../services/auth.service';
 
 @Component({
   selector: 'app-cadastrar',
@@ -7,13 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastrarPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private _auth: AuthenticateService
+  ) { }
 
-  criarConta(dados: any){
-    console.log(dados);
-    console.log(dados.nome);
-    console.log(dados.email);
-    console.log(dados.telefone);
+  criarConta(dados: any) {
+    this._auth.register(dados.email, dados.password)
   }
 
   ngOnInit() {
