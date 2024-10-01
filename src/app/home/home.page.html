@@ -33,7 +33,7 @@
 
             <!-- Aqui estão os dois botões a serem trocados pelo terceiro: -->
             <ion-buttons slot="end" [collapse]="true">
-                <ion-button *ngIf="!user" slot="end" fill="outline" routerLink="/login" size="small">LOGIN</ion-button>
+                <ion-button *ngIf="!user" slot="end" fill="outline" routerLink="/login" size="small">ENTRAR</ion-button>
                 <ion-button *ngIf="!user" slot="end" class="desktop-only" fill="solid" routerLink="/cadastrar" size="small">CADASTRAR</ion-button>
 
                 <ion-menu-button *ngIf="user" size="large" (click)="openEndMenu()">

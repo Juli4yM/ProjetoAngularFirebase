@@ -13,7 +13,7 @@
 
     <ion-row class="ion-justify-content-center ion-align-items-center" style="height: 100%;">
       <ion-col size="12" sizeLg="6" class="log">
-        <form #criarContaForm="ngForm" (ngSubmit)="criarConta(criarContaForm.value)">
+        <form #criarContaForm="ngForm" (ngSubmit)="criarConta(criarContaForm.value)" style="border-radius: 5px;">
           <ion-item>
             <h2>Crie sua conta</h2>
           </ion-item>
@@ -27,7 +27,7 @@
             <ion-input label="Senha" type="password" name="password" ngModel required></ion-input>
           </ion-item>
           <ion-item lines="none">
-            <ion-button type="submit" size="default" fill="solid" slot="end">Cadastrar</ion-button>
+            <ion-button type="submit" size="default" color="dark" fill="solid" slot="end">Cadastrar</ion-button>
           </ion-item>
         </form>
       </ion-col>
