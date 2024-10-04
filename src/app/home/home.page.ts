@@ -49,4 +49,5 @@ export class HomePage {
      */
     this.menuCtrl.open('end');
   }
+
 }

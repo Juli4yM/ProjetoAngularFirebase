@@ -14,7 +14,8 @@ export class CadastrarPage implements OnInit {
   ) { }
 
   criarConta(dados: any) {
-    this._auth.register(dados.email, dados.password)
+    this._auth.verify(dados.email);
+    // this._auth.register(dados.email, dados.password)
   }
 
   ngOnInit() {
