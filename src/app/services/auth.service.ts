@@ -25,7 +25,7 @@ export class AuthenticateService {
     * @param password: string
     * @return: Promise<any>
     * */
-    public async register(email: string, password: string): Promise<boolean> {
+    public async register(nome: string, email: string, password: string): Promise<boolean> {
         this.isLoading = true;
 
         createUserWithEmailAndPassword(this.auth, email, password)
@@ -48,7 +48,7 @@ export class AuthenticateService {
 
 
     
-    public async verify(email: string): Promise<any> {
+    public async verify(email: string, password: string): Promise<any> {
         this.isLoading = true;
 
         const actionCodeSettings = {

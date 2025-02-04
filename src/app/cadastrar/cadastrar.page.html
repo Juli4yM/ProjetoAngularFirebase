@@ -1,36 +1,58 @@
-
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start" [collapse]="true">
-      <ion-button routerLink="/home" size="large"><ion-icon name="arrow-back" size="large"></ion-icon></ion-button>
-    </ion-buttons>
-
-      <ion-title>Cadastro</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-
     <ion-row class="ion-justify-content-center ion-align-items-center" style="height: 100%;">
-      <ion-col size="12" sizeLg="6" class="log">
-        <form #criarContaForm="ngForm" (ngSubmit)="criarConta(criarContaForm.value)" style="border-radius: 5px;">
-          <ion-item>
-            <h2>Crie sua conta</h2>
-          </ion-item>
-          <!-- <ion-item>
-            <ion-input label="Nome" type="text" placeholder="Nome Sobrenome" name="nome" ngModel required></ion-input>
-          </ion-item> -->
-          <ion-item>
-            <ion-input label="Email" type="text" placeholder="exemplo@hotmail.com" name="email" ngModel required></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-input label="Senha" type="password" name="password" required ngModel></ion-input>
-          </ion-item>
-          <ion-item lines="none">
-            <ion-button type="submit" size="default" color="dark" fill="solid" slot="end">Cadastrar</ion-button>
-          </ion-item>
-        </form>
+      <ion-col size-lg="6" size="2" class="img">
+        <ion-button routerLink="/home" size="large" color="white"><ion-icon name="arrow-back" size="large"></ion-icon></ion-button>
+      </ion-col>
+
+      <ion-col size="12" size-lg="6">
+        <main style="justify-content: center; align-items: center;">
+          <ion-row class="Letreiro">
+            <ion-label style="font-size: 3rem;">Criar Conta</ion-label>
+          </ion-row>
+
+          <ion-row class="form1">
+            <form #criarContaForm="ngForm" (ngSubmit)="criarConta(criarContaForm.value)">
+              <ion-list>
+                  <ion-item lines="inset">
+                    <ion-input label="Nome" labelPlacement="floating" type="text" placeholder="Nome Completo" name="nome" ngModel required></ion-input>
+                  </ion-item>
+                  <ion-item lines="inset">
+                    <ion-input label="Email" labelPlacement="floating" type="text" placeholder="exemplo@hotmail.com" name="email" ngModel required></ion-input>
+                  </ion-item>
+                  <ion-item lines="inset">
+                    <ion-input label="Senha" labelPlacement="floating" type="password" name="password" required ngModel></ion-input>
+                  </ion-item>
+                  <ion-item lines="inset">
+                    <ion-input label="Confirmar Senha" labelPlacement="floating" type="password" name="passwordC" required ngModel></ion-input>
+                  </ion-item>
+              </ion-list>
+            
+              <ion-item lines="none" style="text-align: center; margin-top: 2rem;">
+                <div class="but">
+                  <ion-button class="desktop-only" type="submit" size="default" color="tertiary" fill="solid">Cadastrar</ion-button>
+                  <ion-button class="mobile-only" type="submit" size="small" color="tertiary" fill="solid">Cadastrar</ion-button>
+                </div>
+              </ion-item>
+            </form>
+          </ion-row>
+
+          <!-- <ion-row class="form2">
+            <ion-list style="justify-content: center;">
+              <ion-item lines="none" style="text-align: center;">
+                <ion-label style="font-size: 1.5rem;">Ou</ion-label>
+              </ion-item>
+              <ion-item lines="none" style="text-align: center;">
+                <ion-button type="submit" size="default" fill="solid" color="terciary">Google</ion-button>
+              </ion-item>
+              <ion-item lines="none" style="text-align: center;">
+                <ion-button type="submit" size="default" fill="solid" color="terciary">Facebook</ion-button>
+              </ion-item>
+              <ion-item lines="none" style="text-align: center;">
+                <ion-button type="submit" size="default" fill="solid" color="terciary">Instagram</ion-button>
+              </ion-item>
+            </ion-list>
+          </ion-row> -->
+        </main>
       </ion-col>
     </ion-row>
-
 </ion-content>

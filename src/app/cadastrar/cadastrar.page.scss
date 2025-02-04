@@ -1,0 +1,60 @@
+form {
+    width: 70%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    & ion-list{
+        height: max-content;
+    }
+}
+
+.but{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Letreiro{
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}
+
+.form1{
+    justify-content: center;
+    align-items: end;
+    height: 50vh;
+}
+
+// .form2{
+//     justify-content: center;
+//     align-items: start;
+//     height: 35vh;
+// }
+
+.img {
+    background-image: url(../../assets/img/alex-perez-pEgsWN0kwbQ-unsplash.jpg);
+    height: 100%;
+    display: block; /* Esconde em dispositivos móveis */
+}
+
+.desktop-only {
+    display: block; /* Esconde em dispositivos móveis */
+}
+
+.mobile-only {
+    display: none; /* Esconde em dispositivos móveis */
+}
+
+@media screen and (max-width: 768px) {
+    .img {
+      display: none; /* Esconde em dispositivos móveis */
+    }
+
+    .desktop-only{
+        display: none;
+    }
+    
+    .mobile-only {
+        display: block; /* Esconde em dispositivos móveis */
+    }
+}
